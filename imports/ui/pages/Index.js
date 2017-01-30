@@ -1,15 +1,27 @@
 import React from 'react';
-import { Jumbotron } from 'react-bootstrap';
+import { browserHistory } from 'react-router';
+import { Col } from 'meteor/jimmiebtlr:react-flexbox-grid';
+import Paper from 'material-ui/Paper';
+import RaisedButton from 'material-ui/RaisedButton';
+
+const style = {
+  height: 'auto',
+  width: '400 px',
+  padding: 20,
+  textAlign: 'center',
+  display: 'inline-block',
+};
 
 const Index = () => (
-  <div className="Index">
-    <Jumbotron className="text-center">
-      <h2>Base</h2>
+  <Col style={{ textAlign: 'center' }} xs={12} md={4} mdOffset={4}>
+    <Paper style={style} zDepth={1}>
+      <h2>Base & Material UI</h2>
       <p>A starting point for Meteor applications.</p>
-      <p><a className="btn btn-success" href="https://themeteorchef.com/base" role="button">Read the Documentation</a></p>
+      <p><a target="_blank" href="https://themeteorchef.com/base" role="button">Read the Documentation</a></p>
       <p style={ { fontSize: '16px', color: '#aaa' } }>Currently at v4.11.0</p>
-    </Jumbotron>
-  </div>
+      <RaisedButton onTouchTap={() => (browserHistory.push('/documents'))} primary={true} label="Start"/>
+    </Paper>
+  </Col>
 );
 
 export default Index;
