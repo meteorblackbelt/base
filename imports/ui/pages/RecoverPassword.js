@@ -1,43 +1,76 @@
 import React from 'react';
-import { Row, Col, Alert, FormGroup, FormControl, Button } from 'react-bootstrap';
+import Formsy from 'formsy-react';
+import { Col } from 'meteor/jimmiebtlr:react-flexbox-grid';
+import Paper from 'material-ui/Paper';
+import RaisedButton from 'material-ui/RaisedButton';
+import { FormsyText } from 'formsy-material-ui/lib';
 import handleRecoverPassword from '../../modules/recover-password';
 
 export default class RecoverPassword extends React.Component {
-  componentDidMount() {
-    handleRecoverPassword({ component: this });
+  constructor() {
+    super();
+    this.state = {
+      canSubmit: false,
+    };
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
+  enableButton() {
+    this.setState({
+      canSubmit: true,
+    });
+  }
+
+  disableButton() {
+    this.setState({
+      canSubmit: false,
+    });
+  }
+
+  handleSubmit() {
+    handleRecoverPassword();
   }
 
   render() {
+    const errorMessages = {
+      emailError: 'Is this email address legit?',
+    };
+    const style = {
+      height: 'auto',
+      width: '400 px',
+      padding: 20,
+      display: 'inline-block',
+    };
     return (
-      <div className="RecoverPassword">
-        <Row>
-          <Col xs={ 12 } sm={ 6 } md={ 4 }>
-            <h4 className="page-header">Recover Password</h4>
-            <Alert bsStyle="info">
-              Enter your email address below to receive a link to reset your password.
-            </Alert>
-            <form
-              ref={ form => (this.recoverPasswordForm = form) }
-              className="recover-password"
-              onSubmit={ this.handleSubmit }
-            >
-              <FormGroup>
-                <FormControl
-                  type="email"
-                  ref="emailAddress"
-                  name="emailAddress"
-                  placeholder="Email Address"
-                />
-              </FormGroup>
-              <Button type="submit" bsStyle="success">Recover Password</Button>
-            </form>
-          </Col>
-        </Row>
-      </div>
+      <Col xs={12} md={4} mdOffset={4}>
+        <Paper className="RecoverPassword" style={style} zDepth={1}>
+          <h4 className="page-header">Recover Password</h4>
+          <p>
+            Enter your email address below to receive a link to reset your password.
+          </p>
+          <Formsy.Form
+            onValid={this.enableButton.bind(this)}
+            onInvalid={this.disableButton.bind(this)}
+            onValidSubmit={this.handleSubmit}
+          >
+            <FormsyText
+              type="email"
+              name="emailAddress"
+              ref="emailAddress"
+              validations="isEmail"
+              validationError={errorMessages.emailError}
+              required
+              hintText="Enter a valid email address"
+              floatingLabelText="Email Address"
+            /><br/><br/>
+            <RaisedButton
+              type="submit"
+              label="Submit"
+              primary={true}
+              disabled={!this.state.canSubmit}
+            />
+          </Formsy.Form>
+        </Paper>
+      </Col>
     );
   }
 }

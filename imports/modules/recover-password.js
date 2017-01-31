@@ -2,41 +2,27 @@
 
 import { Accounts } from 'meteor/accounts-base';
 import { Bert } from 'meteor/themeteorchef:bert';
-import './validation.js';
 
-let component;
-
-const handleRecovery = () => {
+export default function handleRecoverPassword() {
   Accounts.forgotPassword({
     email: document.querySelector('[name="emailAddress"]').value,
   }, (error) => {
     if (error) {
-      Bert.alert(error.reason, 'warning');
+      Bert.alert({
+        type: 'danger',
+        style: 'growl-bottom-right',
+        title: error.reason,
+        icon: 'fa-warning',
+        hideDelay: 5000,
+      });
     } else {
-      Bert.alert('Check your inbox for a reset link!', 'success');
+      Bert.alert({
+        type: 'success',
+        style: 'growl-bottom-right',
+        title: 'Check your inbox for a reset link!',
+        icon: 'fa-check-circle',
+        hideDelay: 5000,
+      });
     }
   });
-};
-
-const validate = () => {
-  $(component.recoverPasswordForm).validate({
-    rules: {
-      emailAddress: {
-        required: true,
-        email: true,
-      },
-    },
-    messages: {
-      emailAddress: {
-        required: 'Need an email address here.',
-        email: 'Is this email address legit?',
-      },
-    },
-    submitHandler() { handleRecovery(); },
-  });
-};
-
-export default function handleRecoverPassword(options) {
-  component = options.component;
-  validate();
 }

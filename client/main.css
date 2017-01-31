@@ -1,0 +1,32 @@
+/* CSS declarations go here */
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+li {
+  font-size: 40px;
+}
+
+body {
+  margin: 0px;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow:0 0 0 50px white inset; /* Change the color to your own background color */
+  -webkit-text-fill-color: #333;
+}
+
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: /*your box-shadow*/,0 0 0 50px white inset;
+  -webkit-text-fill-color: #333;
+}
+
+.bert-alert.success {
+  background: #009688;
+  color: #fff;
+}
+
+.bert-alert.danger {
+  background: #F44336;
+  color: #fff;
+}

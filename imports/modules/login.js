@@ -3,7 +3,6 @@
 import { browserHistory } from 'react-router';
 import { Meteor } from 'meteor/meteor';
 import { Bert } from 'meteor/themeteorchef:bert';
-import './validation.js';
 
 let component;
 
@@ -13,13 +12,25 @@ const login = () => {
 
   Meteor.loginWithPassword(email, password, (error) => {
     if (error) {
-      Bert.alert(error.reason, 'warning');
+      Bert.alert({
+        type: 'danger',
+        style: 'growl-bottom-right',
+        title: error.reason,
+        icon: 'fa-warning',
+        hideDelay: 5000,
+      });
     } else {
-      Bert.alert('Logged in!', 'success');
+      Bert.alert({
+        type: 'success',
+        style: 'growl-bottom-right',
+        title: 'Welcome!',
+        icon: 'fa-check-circle',
+        hideDelay: 5000,
+      });
 
-      const { location } = component.props;
-      if (location.state && location.state.nextPathname) {
-        browserHistory.push(location.state.nextPathname);
+      const location = component.props;
+      if (location.nextPathname) {
+        browserHistory.push(location.nextPathname);
       } else {
         browserHistory.push('/');
       }
@@ -27,31 +38,7 @@ const login = () => {
   });
 };
 
-const validate = () => {
-  $(component.loginForm).validate({
-    rules: {
-      emailAddress: {
-        required: true,
-        email: true,
-      },
-      password: {
-        required: true,
-      },
-    },
-    messages: {
-      emailAddress: {
-        required: 'Need an email address here.',
-        email: 'Is this email address legit?',
-      },
-      password: {
-        required: 'Need a password here.',
-      },
-    },
-    submitHandler() { login(); },
-  });
-};
-
 export default function handleLogin(options) {
   component = options.component;
-  validate();
+  login();
 }

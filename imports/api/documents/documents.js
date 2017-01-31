@@ -26,6 +26,10 @@ Documents.schema = new SimpleSchema({
     type: String,
     label: 'The body of the document.',
   },
+  date: {
+    type: String,
+    label: 'The date of the document.',
+  },
 });
 
 Documents.attachSchema(Documents.schema);
@@ -33,4 +37,5 @@ Documents.attachSchema(Documents.schema);
 Factory.define('document', Documents, {
   title: () => 'Factory Title',
   body: () => 'Factory Body',
+  date: () => 'Factory Date',
 });

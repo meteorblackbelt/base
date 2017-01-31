@@ -1,24 +1,56 @@
+/* eslint-disable arrow-body-style */
+
 import React from 'react';
 import { browserHistory } from 'react-router';
-import { ListGroup, ListGroupItem, Alert } from 'react-bootstrap';
+import { Table, TableBody, TableRow, TableRowColumn } from 'material-ui/Table';
+import FlatButton from 'material-ui/FlatButton';
+import RemoveRedEye from 'material-ui/svg-icons/image/remove-red-eye';
 
-const handleNav = (_id) => {
-  browserHistory.push(`/documents/${_id}`);
+export default class DocumentsList extends React.Component {
+  handleNav(_id) {
+    browserHistory.push(`/documents/${_id}`);
+  }
+
+  renderDocuments() {
+    const documents = this.props.documents;
+    if (documents.length > 0) {
+      return documents.map(document => (
+        <TableRow key={ document._id } hoverable={true}>
+          <TableRowColumn>
+            <FlatButton
+              label='view'
+              primary={true}
+              icon={<RemoveRedEye />}
+              onTouchTap={() => this.handleNav(document._id)}
+            />
+          </TableRowColumn>
+          <TableRowColumn>
+            <h4>{document.title}</h4>
+          </TableRowColumn>
+          <TableRowColumn>
+            <h4>{document.date}</h4>
+          </TableRowColumn>
+        </TableRow>
+      ));
+    }
+    return (
+      <div style={{ paddingLeft: '20px' }}>
+        <p>No documents yet.</p>
+      </div>
+    );
+  }
+
+  render() {
+    return (
+      <Table>
+        <TableBody displayRowCheckbox={false} showRowHover={true}>
+          {this.renderDocuments()}
+        </TableBody>
+      </Table>
+    );
+  }
 }
-
-const DocumentsList = ({ documents }) => (
-  documents.length > 0 ? <ListGroup className="DocumentsList">
-    {documents.map(({ _id, title }) => (
-      <ListGroupItem key={ _id } onClick={ () => handleNav(_id) }>
-        { title }
-      </ListGroupItem>
-    ))}
-  </ListGroup> :
-  <Alert bsStyle="warning">No documents yet.</Alert>
-);
 
 DocumentsList.propTypes = {
   documents: React.PropTypes.array,
 };
-
-export default DocumentsList;

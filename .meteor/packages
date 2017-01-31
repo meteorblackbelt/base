@@ -22,7 +22,6 @@ check@1.2.4
 audit-argument-checks@1.0.7
 browser-policy@1.0.9
 
-fourseven:scss
 aldeed:collection2
 alanning:roles
 themeteorchef:bert
@@ -34,3 +33,4 @@ mdg:validated-method
 dburles:factory@1.0.0
 ddp-rate-limiter@1.0.6
 shell-server@0.2.1
+jimmiebtlr:react-flexbox-grid

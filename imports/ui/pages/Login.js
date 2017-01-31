@@ -1,54 +1,40 @@
 import React from 'react';
-import { Link } from 'react-router';
-import { Row, Col, FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
-import handleLogin from '../../modules/login';
+import { browserHistory } from 'react-router';
+import { Col } from 'meteor/jimmiebtlr:react-flexbox-grid';
+import Paper from 'material-ui/Paper';
+import Login from '../components/Login.js';
 
-export default class Login extends React.Component {
-  componentDidMount() {
-    handleLogin({ component: this });
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
+export default class LoginPage extends React.Component {
+  nextPathname() {
+    if (this.props.location.state && this.props.location.state.nextPathname) {
+      return this.props.location.state.nextPathname;
+    }
+    return null;
   }
 
   render() {
+    const style = {
+      height: 'auto',
+      width: '400px',
+      padding: 20,
+      display: 'inline-block',
+    };
     return (
-      <div className="Login">
-        <Row>
-          <Col xs={ 12 } sm={ 6 } md={ 4 }>
-            <h4 className="page-header">Login</h4>
-            <form
-              ref={ form => (this.loginForm = form) }
-              className="login"
-              onSubmit={ this.handleSubmit }
-            >
-              <FormGroup>
-                <ControlLabel>Email Address</ControlLabel>
-                <FormControl
-                  type="email"
-                  ref="emailAddress"
-                  name="emailAddress"
-                  placeholder="Email Address"
-                />
-              </FormGroup>
-              <FormGroup>
-                <ControlLabel>
-                  <span className="pull-left">Password</span>
-                  <Link className="pull-right" to="/recover-password">Forgot Password?</Link>
-                </ControlLabel>
-                <FormControl
-                  type="password"
-                  ref="password"
-                  name="password"
-                  placeholder="Password"
-                />
-              </FormGroup>
-              <Button type="submit" bsStyle="success">Login</Button>
-            </form>
-          </Col>
-        </Row>
-      </div>
+      <Col xs={12} md={4} mdOffset={4}>
+        <Paper style={style} zDepth={1}>
+          <Login
+            nextPathname={this.nextPathname()}
+            handleClose={() => (0)}
+            displayLogin={() => (browserHistory.push('/signup'))}
+          />
+        </Paper>
+      </Col>
     );
   }
 }
+
+LoginPage.propTypes = {
+  'location.state.nextPathname': React.PropTypes.string,
+  'location.state.': React.PropTypes.object,
+  location: React.PropTypes.object,
+};
