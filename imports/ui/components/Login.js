@@ -78,8 +78,8 @@ export default class Login extends React.Component {
             disabled={!this.state.canSubmit}
           />
         </Formsy.Form><br/>
-      <p>No account? <FlatButton primary={true} label="Sign Up" onTouchTap={() => (this.props.displayLogin(false))}/></p>
-      <p>Forgot password? <FlatButton label="Reset Password" primary={true} onTouchTap={this.handleRecPassword.bind(this)}/></p>
+      <p>No account? <FlatButton primary={true} label="Sign Up" onClick={() => (this.props.displayLogin(false))}/></p>
+      <p>Forgot password? <FlatButton label="Reset Password" primary={true} onClick={this.handleRecPassword.bind(this)}/></p>
       </Col>
     );
   }

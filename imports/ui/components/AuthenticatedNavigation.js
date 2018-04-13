@@ -73,10 +73,10 @@ export default class AppNavigation extends React.Component {
           label="Toggle Drawer"
           title="Application Name"
           onTitleTouchTap={() => (browserHistory.push('/'))}
-          onLeftIconButtonTouchTap={this.handleToggle}
+          onLeftIconButtonClick={this.handleToggle}
           iconElementRight={
             <FlatButton
-              onTouchTap={this.handleTouchTap.bind(this)}
+              onClick={this.handleTouchTap.bind(this)}
               label={this.userName()}
               labelPosition="after"
               icon={
@@ -97,7 +97,7 @@ export default class AppNavigation extends React.Component {
                 onRequestClose={this.handleRequestClose.bind(this)}
               >
                 <Menu>
-                  <MenuItem leftIcon={<ExitToApp/>} primaryText="Sign out" onTouchTap={this.handleLogout}/>
+                  <MenuItem leftIcon={<ExitToApp/>} primaryText="Sign out" onClick={this.handleLogout}/>
                 </Menu>
               </Popover>
             </FlatButton>
@@ -108,7 +108,7 @@ export default class AppNavigation extends React.Component {
             title="Menu"
             showMenuIconButton={false}
             iconElementRight={
-              <IconButton onTouchTap={this.handleToggle}>
+              <IconButton onClick={this.handleToggle}>
                 <NavigationClose />
               </IconButton>}
           />

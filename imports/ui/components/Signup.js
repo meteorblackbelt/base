@@ -93,7 +93,7 @@ export default class Signup extends React.Component {
             disabled={!this.state.canSubmit}
           />
         </Formsy.Form><br/>
-        <p>Already have an account? <FlatButton primary={true} label="Log In" onTouchTap={() => (this.props.displayLogin(true))}/></p>
+        <p>Already have an account? <FlatButton primary={true} label="Log In" onClick={() => (this.props.displayLogin(true))}/></p>
       </Col>
     );
   }

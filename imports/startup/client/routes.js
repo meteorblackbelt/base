@@ -5,7 +5,6 @@ import { render } from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { Meteor } from 'meteor/meteor';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import App from '../../ui/layouts/App.js';
 import LoginPage from '../../ui/pages/Login.js';
 import SignupPage from '../../ui/pages/Signup.js';
@@ -13,8 +12,6 @@ import Index from '../../ui/pages/Index.js';
 import NotFound from '../../ui/pages/NotFound.js';
 import RecoverPassword from '../../ui/pages/RecoverPassword.js';
 import ResetPassword from '../../ui/pages/ResetPassword.js';
-
-injectTapEventPlugin();
 
 const authenticate = (nextState, replace) => {
   if (!Meteor.loggingIn() && !Meteor.userId()) {

@@ -41,9 +41,9 @@ export default class PublicNavigation extends React.Component {
 
   renderSignInButton() {
     if (window.location.pathname === '/login' || window.location.pathname === '/signup' || window.location.pathname === '/reset-password' || window.location.pathname === '/recover-password') {
-      return <FlatButton label="Sign In" onTouchTap={() => (browserHistory.push('/login'))}/>;
+      return <FlatButton label="Sign In" onClick={() => (browserHistory.push('/login'))}/>;
     }
-    return <FlatButton label="Sign In" onTouchTap={this.handleOpen.bind(this)}/>;
+    return <FlatButton label="Sign In" onClick={this.handleOpen.bind(this)}/>;
   }
 
   render() {
@@ -58,7 +58,7 @@ export default class PublicNavigation extends React.Component {
       <FlatButton
         label="Cancel"
         secondary={true}
-        onTouchTap={this.handleClose.bind(this)}
+        onClick={this.handleClose.bind(this)}
       />,
     ];
     return (
