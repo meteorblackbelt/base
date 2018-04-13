@@ -9,7 +9,7 @@ const renderNavigation = hasUser => (hasUser ? <AuthenticatedNavigation user={ha
 
 const AppNavigation = ({ hasUser }) => (
   <div>
-    { renderNavigation(hasUser) }
+    { renderNavigation(Meteor.user()) }
   </div>
 );
 
