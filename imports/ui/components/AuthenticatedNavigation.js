@@ -73,7 +73,7 @@ export default class AppNavigation extends React.Component {
           label="Toggle Drawer"
           title="Application Name"
           onTitleTouchTap={() => (browserHistory.push('/'))}
-          onLeftIconButtonClick={this.handleToggle}
+          onLeftIconButtonTouchTap={this.handleToggle}
           iconElementRight={
             <FlatButton
               onClick={this.handleTouchTap.bind(this)}

@@ -1,6 +1,6 @@
 import React from 'react';
 import Formsy from 'formsy-react-2';
-import { Col } from 'meteor/jimmiebtlr:react-flexbox-grid';
+import { Col } from 'react-flexbox-grid';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import { FormsyText } from 'formsy-mui';

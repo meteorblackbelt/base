@@ -1,6 +1,6 @@
 import React from 'react';
 import CircularProgress from 'material-ui/CircularProgress';
-import { Col } from 'meteor/jimmiebtlr:react-flexbox-grid';
+import { Col } from 'react-flexbox-grid';
 
 const Loading = () => (
   <Col xs={4} xsOffset={4} style={{ textAlign: 'center' }}>

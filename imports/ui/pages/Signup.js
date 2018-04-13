@@ -1,6 +1,6 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
-import { Col } from 'meteor/jimmiebtlr:react-flexbox-grid';
+import { Col } from 'react-flexbox-grid';
 import Paper from 'material-ui/Paper';
 import Signup from '../components/Signup.js';
 

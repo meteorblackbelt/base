@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Row } from 'meteor/jimmiebtlr:react-flexbox-grid';
+import { Grid, Row } from 'react-flexbox-grid';
 import AppNavigation from '../containers/AppNavigation.js';
 import PropTypes from 'prop-types';
 
