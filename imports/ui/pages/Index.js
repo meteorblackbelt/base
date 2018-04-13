@@ -19,7 +19,6 @@ const Index = () => (
       <p>A starting point for Meteor applications.</p>
       <p><a target="_blank" href="https://themeteorchef.com/base" role="button">Read the Documentation</a></p>
       <p style={ { fontSize: '16px', color: '#aaa' } }>Currently at v4.11.0</p>
-      <RaisedButton onTouchTap={() => (browserHistory.push('/documents'))} primary={true} label="Start"/>
     </Paper>
   </Col>
 );

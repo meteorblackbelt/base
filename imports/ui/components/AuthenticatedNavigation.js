@@ -113,7 +113,6 @@ export default class AppNavigation extends React.Component {
               </IconButton>}
           />
           <MenuItem primaryText="Home" leftIcon={<Home />} containerElement={<Link to="/"/>} />
-          <MenuItem primaryText="Documents" leftIcon={<InsertDriveFile />} containerElement={<Link to="/documents"/>} />
         </Drawer>
       </div>
     );

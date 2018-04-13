@@ -7,12 +7,8 @@ import { Meteor } from 'meteor/meteor';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import App from '../../ui/layouts/App.js';
-import Documents from '../../ui/pages/Documents.js';
-import NewDocument from '../../ui/pages/NewDocument.js';
 import LoginPage from '../../ui/pages/Login.js';
 import SignupPage from '../../ui/pages/Signup.js';
-import EditDocument from '../../ui/containers/EditDocument.js';
-import ViewDocument from '../../ui/containers/ViewDocument.js';
 import Index from '../../ui/pages/Index.js';
 import NotFound from '../../ui/pages/NotFound.js';
 import RecoverPassword from '../../ui/pages/RecoverPassword.js';
@@ -35,10 +31,6 @@ Meteor.startup(() => {
       <Router history={ browserHistory }>
         <Route path="/" component={ App }>
           <IndexRoute name="index" component={ Index } />
-          <Route name="documents" path="/documents" component={ Documents } onEnter={ authenticate } />
-          <Route name="newDocument" path="/documents/new" component={ NewDocument } onEnter={ authenticate } />
-          <Route name="viewDocument" path="/documents/:_id" component={ ViewDocument } onEnter={ authenticate } />
-          <Route name="editDocument" path="/documents/:_id/edit" component={ EditDocument } onEnter={ authenticate } />
           <Route name="login" path="/login" component={ LoginPage } />
           <Route name="signup" path="/signup" component={ SignupPage } />
           <Route name="recover-password" path="/recover-password" component={ RecoverPassword } />
