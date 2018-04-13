@@ -3,6 +3,7 @@ import { browserHistory } from 'react-router';
 import { Col } from 'meteor/jimmiebtlr:react-flexbox-grid';
 import Paper from 'material-ui/Paper';
 import Login from '../components/Login.js';
+import PropTypes from 'prop-types';
 
 export default class LoginPage extends React.Component {
   nextPathname() {
@@ -34,7 +35,7 @@ export default class LoginPage extends React.Component {
 }
 
 LoginPage.propTypes = {
-  'location.state.nextPathname': React.PropTypes.string,
-  'location.state.': React.PropTypes.object,
-  location: React.PropTypes.object,
+  'location.state.nextPathname': PropTypes.string,
+  'location.state.': PropTypes.object,
+  location: PropTypes.object,
 };

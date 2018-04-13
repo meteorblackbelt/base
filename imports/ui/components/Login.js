@@ -8,6 +8,7 @@ import FlatButton from 'material-ui/FlatButton';
 import { FormsyText } from 'formsy-material-ui/lib';
 import { Col } from 'meteor/jimmiebtlr:react-flexbox-grid';
 import handleLogin from '../../modules/login';
+import PropTypes from 'prop-types';
 
 export default class Login extends React.Component {
   constructor() {
@@ -85,6 +86,6 @@ export default class Login extends React.Component {
 }
 
 Login.propTypes = {
-  displayLogin: React.PropTypes.func.isRequired,
-  handleClose: React.PropTypes.func,
+  displayLogin: PropTypes.func.isRequired,
+  handleClose: PropTypes.func,
 };

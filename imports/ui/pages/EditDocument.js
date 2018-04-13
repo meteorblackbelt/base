@@ -2,6 +2,7 @@ import React from 'react';
 import { Col } from 'meteor/jimmiebtlr:react-flexbox-grid';
 import Paper from 'material-ui/Paper';
 import DocumentEditor from '../components/DocumentEditor.js';
+import PropTypes from 'prop-types';
 
 const style = {
   height: 'auto',
@@ -20,7 +21,7 @@ const EditDocument = ({ doc }) => (
 );
 
 EditDocument.propTypes = {
-  doc: React.PropTypes.object,
+  doc: PropTypes.object,
 };
 
 export default EditDocument;

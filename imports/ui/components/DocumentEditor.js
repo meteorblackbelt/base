@@ -5,6 +5,7 @@ import Formsy from 'formsy-react';
 import RaisedButton from 'material-ui/RaisedButton';
 import { FormsyText } from 'formsy-material-ui/lib';
 import documentEditor from '../../modules/document-editor.js';
+import PropTypes from 'prop-types';
 
 export default class DocumentEditor extends React.Component {
   constructor() {
@@ -67,5 +68,5 @@ export default class DocumentEditor extends React.Component {
 }
 
 DocumentEditor.propTypes = {
-  doc: React.PropTypes.object,
+  doc: PropTypes.object,
 };

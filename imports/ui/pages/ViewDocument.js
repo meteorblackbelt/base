@@ -17,6 +17,7 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import { Col } from 'meteor/jimmiebtlr:react-flexbox-grid';
 import { removeDocument } from '../../api/documents/methods.js';
+import PropTypes from 'prop-types';
 
 export default class ViewDocument extends React.Component {
   constructor(props) {
@@ -142,5 +143,5 @@ export default class ViewDocument extends React.Component {
 }
 
 ViewDocument.propTypes = {
-  doc: React.PropTypes.object.isRequired,
+  doc: PropTypes.object.isRequired,
 };

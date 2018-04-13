@@ -5,6 +5,7 @@ import Paper from 'material-ui/Paper';
 import { FormsyText } from 'formsy-material-ui/lib';
 import RaisedButton from 'material-ui/RaisedButton';
 import handleResetPassword from '../../modules/reset-password';
+import PropTypes from 'prop-types';
 
 export default class ResetPassword extends React.Component {
   constructor() {
@@ -88,5 +89,5 @@ export default class ResetPassword extends React.Component {
 }
 
 ResetPassword.propTypes = {
-  params: React.PropTypes.object,
+  params: PropTypes.object,
 };

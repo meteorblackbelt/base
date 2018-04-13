@@ -7,6 +7,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import { FormsyText } from 'formsy-material-ui/lib';
 import handleSignup from '../../modules/signup';
+import PropTypes from 'prop-types';
 
 export default class Signup extends React.Component {
   constructor() {
@@ -99,5 +100,5 @@ export default class Signup extends React.Component {
 }
 
 Signup.propTypes = {
-  displayLogin: React.PropTypes.func.isRequired,
+  displayLogin: PropTypes.func.isRequired,
 };

@@ -5,6 +5,7 @@ import { browserHistory } from 'react-router';
 import { Table, TableBody, TableRow, TableRowColumn } from 'material-ui/Table';
 import FlatButton from 'material-ui/FlatButton';
 import RemoveRedEye from 'material-ui/svg-icons/image/remove-red-eye';
+import PropTypes from 'prop-types';
 
 export default class DocumentsList extends React.Component {
   handleNav(_id) {
@@ -52,5 +53,5 @@ export default class DocumentsList extends React.Component {
 }
 
 DocumentsList.propTypes = {
-  documents: React.PropTypes.array,
+  documents: PropTypes.array,
 };

@@ -3,6 +3,7 @@
 import React from 'react';
 import PublicNavigation from './PublicNavigation.js';
 import AuthenticatedNavigation from './AuthenticatedNavigation.js';
+import PropTypes from 'prop-types';
 
 const renderNavigation = hasUser => (hasUser ? <AuthenticatedNavigation user={hasUser} /> : <PublicNavigation />);
 
@@ -13,7 +14,7 @@ const AppNavigation = ({ hasUser }) => (
 );
 
 AppNavigation.propTypes = {
-  hasUser: React.PropTypes.object,
+  hasUser: PropTypes.object,
 };
 
 export default AppNavigation;

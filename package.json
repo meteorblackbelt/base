@@ -66,6 +66,7 @@
     "formsy-material-ui": "^0.5.3",
     "formsy-react": "^0.18.0",
     "material-ui": "^0.16.7",
+    "prop-types": "^15.6.1",
     "react": "^15.3.2",
     "react-addons-pure-render-mixin": "^15.3.2",
     "react-dom": "^15.3.2",

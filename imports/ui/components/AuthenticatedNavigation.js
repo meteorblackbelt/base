@@ -16,6 +16,7 @@ import ExitToApp from 'material-ui/svg-icons/action/exit-to-app';
 import Drawer from 'material-ui/Drawer';
 import Avatar from 'material-ui/Avatar';
 import { blueGrey800, tealA200 } from 'material-ui/styles/colors';
+import PropTypes from 'prop-types';
 
 export default class AppNavigation extends React.Component {
   constructor() {
@@ -120,5 +121,5 @@ export default class AppNavigation extends React.Component {
 }
 
 AppNavigation.propTypes = {
-  user: React.PropTypes.object,
+  user: PropTypes.object,
 };
