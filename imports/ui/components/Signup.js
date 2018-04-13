@@ -1,11 +1,11 @@
 /* eslint-disable max-len */
 
 import React from 'react';
-import Formsy from 'formsy-react';
+import Formsy from 'formsy-react-2';
 import { Col } from 'meteor/jimmiebtlr:react-flexbox-grid';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-import { FormsyText } from 'formsy-material-ui/lib';
+import { FormsyText } from 'formsy-mui';
 import handleSignup from '../../modules/signup';
 import PropTypes from 'prop-types';
 

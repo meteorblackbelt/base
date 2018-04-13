@@ -1,8 +1,8 @@
 import React from 'react';
-import Formsy from 'formsy-react';
+import Formsy from 'formsy-react-2';
 import { Col } from 'meteor/jimmiebtlr:react-flexbox-grid';
 import Paper from 'material-ui/Paper';
-import { FormsyText } from 'formsy-material-ui/lib';
+import { FormsyText } from 'formsy-mui';
 import RaisedButton from 'material-ui/RaisedButton';
 import handleResetPassword from '../../modules/reset-password';
 import PropTypes from 'prop-types';

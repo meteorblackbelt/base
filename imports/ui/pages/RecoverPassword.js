@@ -1,9 +1,9 @@
 import React from 'react';
-import Formsy from 'formsy-react';
+import Formsy from 'formsy-react-2';
 import { Col } from 'meteor/jimmiebtlr:react-flexbox-grid';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
-import { FormsyText } from 'formsy-material-ui/lib';
+import { FormsyText } from 'formsy-mui';
 import handleRecoverPassword from '../../modules/recover-password';
 
 export default class RecoverPassword extends React.Component {
