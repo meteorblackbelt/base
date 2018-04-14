@@ -16,12 +16,11 @@ export default class LoginPage extends React.Component {
   render() {
     const style = {
       height: 'auto',
-      width: '400px',
       padding: 20,
-      display: 'inline-block',
+      display: 'block',
     };
     return (
-      <Col xs={12} md={4} mdOffset={4}>
+      <Col xs={12} md={6} mdOffset={3} lg={4} lgOffset={4}>
         <Paper style={style} zDepth={1}>
           <Login
             nextPathname={this.nextPathname()}

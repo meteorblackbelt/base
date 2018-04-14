@@ -5,14 +5,12 @@ import Paper from 'material-ui/Paper';
 import Signup from '../components/Signup.js';
 
 const style = {
-  height: 'auto',
-  width: '400 px',
   padding: 20,
-  display: 'inline-block',
+  display: 'block',
 };
 
 const SignupPage = () => (
-  <Col xs={12} md={4} mdOffset={4}>
+  <Col xs={12} md={6} mdOffset={3} lg={4} lgOffset={4}>
     <Paper style={style} zDepth={1}>
       <Signup displayLogin={() => (browserHistory.push('/login'))}/>
     </Paper>

@@ -3,6 +3,7 @@ import Formsy from 'formsy-react-2';
 import { Col } from 'react-flexbox-grid';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton';
 import { FormsyText } from 'formsy-mui';
 import handleRecoverPassword from '../../modules/recover-password';
 
@@ -36,12 +37,11 @@ export default class RecoverPassword extends React.Component {
     };
     const style = {
       height: 'auto',
-      width: '400 px',
       padding: 20,
-      display: 'inline-block',
+      display: 'block',
     };
     return (
-      <Col xs={12} md={4} mdOffset={4}>
+      <Col xs={12} md={6} mdOffset={3} lg={4} lgOffset={4}>
         <Paper className="RecoverPassword" style={style} zDepth={1}>
           <h4 className="page-header">Recover Password</h4>
           <p>
@@ -55,6 +55,7 @@ export default class RecoverPassword extends React.Component {
             <FormsyText
               type="email"
               name="emailAddress"
+              fullWidth={true}
               ref="emailAddress"
               validations="isEmail"
               validationError={errorMessages.emailError}
@@ -69,6 +70,7 @@ export default class RecoverPassword extends React.Component {
               disabled={!this.state.canSubmit}
             />
           </Formsy.Form>
+          <p>Remember your password? <FlatButton primary={true} label="Log In" onClick={() => (this.props.displayLogin(true))}/></p>
         </Paper>
       </Col>
     );

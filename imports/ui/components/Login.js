@@ -41,7 +41,7 @@ export default class Login extends React.Component {
 
   render() {
     const errorMessages = {
-      emailError: 'Is this email address legit?',
+      emailError: 'Is this email address valid?',
       passwordError: 'Please provide at least 6 characters.',
     };
     return (
@@ -55,6 +55,7 @@ export default class Login extends React.Component {
           <FormsyText
             type="email"
             name="emailAddress"
+            fullWidth={true}
             ref="emailAddress"
             validations="isEmail"
             validationError={errorMessages.emailError}
@@ -65,6 +66,7 @@ export default class Login extends React.Component {
           <FormsyText
             type="password"
             name="password"
+            fullWidth={true}
             ref="password"
             validations={{ minLength: 6 }}
             validationError={errorMessages.passwordError}
@@ -78,8 +80,8 @@ export default class Login extends React.Component {
             disabled={!this.state.canSubmit}
           />
         </Formsy.Form><br/>
-      <p>No account? <FlatButton primary={true} label="Sign Up" onClick={() => (this.props.displayLogin(false))}/></p>
-      <p>Forgot password? <FlatButton label="Reset Password" primary={true} onClick={this.handleRecPassword.bind(this)}/></p>
+        <p>No account? <FlatButton primary={true} label="Sign Up" onClick={() => (this.props.displayLogin(false))}/></p>
+        <p>Forgot password? <FlatButton label="Reset Password" primary={true} onClick={this.handleRecPassword.bind(this)}/></p>
       </Col>
     );
   }

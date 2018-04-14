@@ -51,6 +51,7 @@ export default class Signup extends React.Component {
             type="text"
             ref="firstName"
             name="firstName"
+            fullWidth={true}
             floatingLabelText="First Name"
             hintText="Enter your first name"
             validations="isWords"
@@ -61,6 +62,7 @@ export default class Signup extends React.Component {
             type="text"
             ref="lastName"
             name="lastName"
+            fullWidth={true}
             floatingLabelText="Last Name"
             hintText="Enter your last name"
             validations="isWords"
@@ -70,6 +72,7 @@ export default class Signup extends React.Component {
           <FormsyText
             type="email"
             name="emailAddress"
+            fullWidth={true}
             ref="emailAddress"
             validations="isEmail"
             validationError={errorMessages.emailError}
@@ -80,6 +83,7 @@ export default class Signup extends React.Component {
           <FormsyText
             type="password"
             name="password"
+            fullWidth={true}
             ref="password"
             validations={{ minLength: 6 }}
             validationError={errorMessages.passwordError}
