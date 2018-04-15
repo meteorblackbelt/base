@@ -43,7 +43,7 @@ export default class ResetPassword extends React.Component {
     };
     return (
       <Col xs={12} md={6} mdOffset={3} lg={4} lgOffset={4}>
-        <Paper className="ResetPassword" style={style} zDepth={1}>
+        <Paper className="ResetPassword" style={style} zDepth={0}>
           <h4 className="page-header">Reset Password</h4>
           <p>
             To reset your password, enter a new one below. You will be logged in

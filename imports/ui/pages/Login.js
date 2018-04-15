@@ -21,7 +21,7 @@ export default class LoginPage extends React.Component {
     };
     return (
       <Col xs={12} md={6} mdOffset={3} lg={4} lgOffset={4}>
-        <Paper style={style} zDepth={1}>
+        <Paper style={style} zDepth={0}>
           <Login
             nextPathname={this.nextPathname()}
             handleClose={() => (0)}

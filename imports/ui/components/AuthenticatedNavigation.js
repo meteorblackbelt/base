@@ -72,6 +72,7 @@ export default class AppNavigation extends React.Component {
         <AppBar
           label="Toggle Drawer"
           title="Application Name"
+          zDepth={0}
           onTitleTouchTap={() => (browserHistory.push('/'))}
           onLeftIconButtonTouchTap={this.handleToggle}
           iconElementRight={
@@ -106,6 +107,7 @@ export default class AppNavigation extends React.Component {
         <Drawer open={this.state.open}>
           <AppBar
             title="Menu"
+            zDepth={0}
             showMenuIconButton={false}
             iconElementRight={
               <IconButton onClick={this.handleToggle}>

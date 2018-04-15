@@ -43,7 +43,7 @@ export default class RecoverPassword extends React.Component {
     };
     return (
       <Col xs={12} md={6} mdOffset={3} lg={4} lgOffset={4}>
-        <Paper className="RecoverPassword" style={style} zDepth={1}>
+        <Paper className="RecoverPassword" style={style} zDepth={0}>
           <h4 className="page-header">Recover Password</h4>
           <p>
             Enter your email address below to receive a link to reset your password.
