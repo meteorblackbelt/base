@@ -15,10 +15,8 @@ const style = {
 const Index = () => (
   <Col style={{ textAlign: 'center' }} xs={12} md={4} mdOffset={4}>
     <Paper style={style} zDepth={1}>
-      <h2>Base & Material UI</h2>
+      <h2>Welcome</h2>
       <p>A starting point for Meteor applications.</p>
-      <p><a target="_blank" href="https://themeteorchef.com/base" role="button">Read the Documentation</a></p>
-      <p style={ { fontSize: '16px', color: '#aaa' } }>Currently at v4.11.0</p>
     </Paper>
   </Col>
 );

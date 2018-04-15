@@ -1,4 +1,5 @@
 import React from 'react';
+import { browserHistory } from 'react-router';
 import Formsy from 'formsy-react-2';
 import { Col } from 'react-flexbox-grid';
 import Paper from 'material-ui/Paper';
@@ -70,7 +71,7 @@ export default class RecoverPassword extends React.Component {
               disabled={!this.state.canSubmit}
             />
           </Formsy.Form>
-          <p>Remember your password? <FlatButton primary={true} label="Log In" onClick={() => (this.props.displayLogin(true))}/></p>
+          <p>Remember your password? <FlatButton primary={true} label="Log In" onClick={() => (browserHistory.push('/login'))}/></p>
         </Paper>
       </Col>
     );
