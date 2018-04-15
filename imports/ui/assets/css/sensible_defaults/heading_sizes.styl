@@ -1,0 +1,11 @@
+heading-sizes($ratio = 0.1, $weight = 400)
+  h1,h2,h3,h4,h5,h6
+    line-height: 1.1em
+    font-weight: $weight
+
+  for $num in (1..6)
+    $tag = "h" + $num
+    {convert($tag)}
+      $fontsize = 1em + (6 - $num) * $ratio
+      font-size: $fontsize
+      margin: ($fontsize / 2) 0 ($fontsize / 2.5) 0

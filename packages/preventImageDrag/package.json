@@ -1,0 +1,12 @@
+{
+  "name": "preventImageDrag",
+  "version": "1.0.0",
+  "description": "Prevent images from being draggable by default",
+  "author": "Angelo Berios",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

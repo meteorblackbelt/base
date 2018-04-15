@@ -1,0 +1,11 @@
+@require 'rupture'
+rupture.scale =        0     480px   768px   992px  1200px  1600px
+//                     └──┬──┘ └──┬──┘ └──┬──┘ └──┬──┘ └──┬──┘ └──┬──
+// Slice numbers:         1       2       3       4       5       6
+rupture.scale-names =    'xs'    's'     'm'     'l'     'xl'    'hd'
+
+rupture.mobile-cutoff =  rupture.scale[1]
+rupture.desktop-cutoff = rupture.scale[4]
+rupture.hd-cutoff =      rupture.scale[5]
+
+$primary-color-1 ?= rgba(74, 144, 226, 1)

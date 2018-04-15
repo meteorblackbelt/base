@@ -6,8 +6,8 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { Meteor } from 'meteor/meteor';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import App from '../../ui/layouts/App.js';
-import Auth from '../../ui/layouts/Auth.js';
+import DefaultLayout from '../../ui/layouts/DefaultLayout.js';
+import BaseLayout from '../../ui/layouts/BaseLayout.js';
 import LoginPage from '../../ui/pages/Login.js';
 import SignupPage from '../../ui/pages/Signup.js';
 import Index from '../../ui/pages/Index.js';
@@ -27,18 +27,16 @@ const authenticate = (nextState, replace) => {
 };
 
 const theme = getMuiTheme({
+  borderRadius: "3px",
   palette: {
     textColor: "rgba(36, 59, 107, 1)",
-    primaryColor: "rgba(74, 144, 226, 1)",
+    primary1Color: "rgba(74, 144, 226, 1)",
   },
   appBar: {
     color: _colors.white,
     textColor: "rgba(36, 59, 107, 1)",
     showMenuIconButton: true,
   },
-  flatButton: {
-    textColor: "rgba(74, 144, 226, 1)",
-  }
 });
 
 Meteor.startup(() => {
@@ -46,13 +44,13 @@ Meteor.startup(() => {
     <MuiThemeProvider muiTheme={theme}>
       <Router history={ browserHistory }>
         <Route path="/">
-          <Route component={ Auth }>
+          <Route component={ BaseLayout }>
             <Route name="login" path="/login" component={ LoginPage } />
             <Route name="signup" path="/signup" component={ SignupPage } />
             <Route name="recover-password" path="/recover-password" component={ RecoverPassword } />
             <Route name="reset-password" path="/reset-password/:token" component={ ResetPassword } />
           </Route>
-          <Route component={ App }>
+          <Route component={ DefaultLayout }>
             <IndexRoute name="index" component={ Index } />
             <Route path="*" component={ NotFound } />
           </Route>

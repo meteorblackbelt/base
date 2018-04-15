@@ -1,0 +1,36 @@
+@require '../assets/css/base.styl'
+
+.base-layout
+  display: flex
+  flex-direction: column
+  justify-content: center
+  height: 100%
+  padding: 20px
+
+  +below('xs')
+    column(1, $cycle: 1)
+
+  +above('s')
+    center()
+    display: flex
+    width: 400px
+
+  .page-header
+    display: flex
+    flex-direction: column
+    flex: 1
+    justify-content: flex-end;
+    align-self: center;
+
+  & > form
+    flex: 4
+    margin: 2em 0
+
+    .form-actions
+      justify-content: center
+      height: 6em
+      align-items:center
+      display: flex
+
+  footer
+    text-align: center

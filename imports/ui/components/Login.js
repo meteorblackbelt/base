@@ -2,13 +2,15 @@
 
 import React from 'react';
 import Formsy from 'formsy-react-2';
-import { browserHistory } from 'react-router';
+import { Link } from 'react-router';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import { FormsyText } from 'formsy-mui';
-import { Col } from 'react-flexbox-grid';
+import { Row, Col } from 'react-flexbox-grid';
 import handleLogin from '../../modules/login';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import "./Login.styl"
 
 export default class Login extends React.Component {
   constructor() {
@@ -20,11 +22,6 @@ export default class Login extends React.Component {
 
   handleSubmitLogin() {
     handleLogin({ component: this });
-  }
-
-  handleRecPassword() {
-    browserHistory.push('/recover-password');
-    this.props.handleClose();
   }
 
   enableButton() {
@@ -45,8 +42,8 @@ export default class Login extends React.Component {
       passwordError: 'Please provide at least 6 characters.',
     };
     return (
-      <Col className="Login">
-        <h4 className="page-header">Sign in</h4>
+      <Col id={this.props.id} className={classNames(this.props.className, "Login")}>
+        <h3 className="page-header" style={{textAlign: "center"}}>Welcome back</h3>
         <Formsy.Form
           onValid={this.enableButton.bind(this)}
           onInvalid={this.disableButton.bind(this)}
@@ -73,21 +70,22 @@ export default class Login extends React.Component {
             hintText="6 characters minimum"
             floatingLabelText="Password"
           /><br/><br/>
-          <RaisedButton
-            type="submit"
-            label="Login"
-            primary={true}
-            disabled={!this.state.canSubmit}
-          />
+          <Row className="form-actions">
+            <RaisedButton
+              type="submit"
+              label="Login"
+              primary={true}
+              disabled={!this.state.canSubmit}
+            />
+          </Row>
+          <Link className="recover-password" to="/recover-password">Forgot Password?</Link>
         </Formsy.Form><br/>
-        <p>No account? <FlatButton primary={true} label="Sign Up" onClick={() => (this.props.displayLogin(false))}/></p>
-        <p>Forgot password? <FlatButton label="Reset Password" primary={true} onClick={this.handleRecPassword.bind(this)}/></p>
+        <footer>
+					Still without an account?
+          {' '}
+          <Link to="/signup">Create one</Link>
+        </footer>
       </Col>
     );
   }
 }
-
-Login.propTypes = {
-  displayLogin: PropTypes.func.isRequired,
-  handleClose: PropTypes.func,
-};

@@ -2,12 +2,14 @@
 
 import React from 'react';
 import Formsy from 'formsy-react-2';
+import { Link } from 'react-router';
 import { Col } from 'react-flexbox-grid';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import { FormsyText } from 'formsy-mui';
 import handleSignup from '../../modules/signup';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 export default class Signup extends React.Component {
   constructor() {
@@ -40,8 +42,8 @@ export default class Signup extends React.Component {
       passwordError: 'Please provide at least 6 characters.',
     };
     return (
-      <Col className="Signup">
-        <h4 className="page-header">Sign Up</h4>
+      <Col id={this.props.id} className={classNames(this.props.className, "Signup")}>
+        <h3 className="page-header">Sign Up</h3>
         <Formsy.Form
           onValid={this.enableButton.bind(this)}
           onInvalid={this.disableButton.bind(this)}
@@ -97,12 +99,12 @@ export default class Signup extends React.Component {
             disabled={!this.state.canSubmit}
           />
         </Formsy.Form><br/>
-        <p>Already have an account? <FlatButton primary={true} label="Log In" onClick={() => (this.props.displayLogin(true))}/></p>
+        <footer>
+          Already have an account? 
+          {" "}
+          <Link to="/login">Log in</Link>
+        </footer>
       </Col>
     );
   }
 }
-
-Signup.propTypes = {
-  displayLogin: PropTypes.func.isRequired,
-};
