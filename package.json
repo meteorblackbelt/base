@@ -67,6 +67,7 @@
     "classnames": "^2.2.5",
     "formsy-mui": "^1.2.2",
     "formsy-react-2": "^0.20.4",
+    "material-design-icons": "^3.0.1",
     "material-ui": "^0.19.4",
     "preventImageDrag": "file:./packages/preventImageDrag",
     "prop-types": "^15.6.1",

@@ -1,6 +1,7 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import Toggle from 'material-ui/Toggle';
 
@@ -30,47 +31,43 @@ class Index extends React.Component {
 
   render() {
     const style = {
-      height: 'auto',
-      width: '400 px',
-      padding: 20,
-      textAlign: 'center',
-      display: 'inline-block',
+      display: 'flex',
+      flexDirection: 'column',
+      flex: 1,
     };
+    const cardStyle = {
+      marginBottom: '1em',
+    }
+    const buttonStyle = {
+      outer: {
+        borderRadius: '20px',
+      },
+      inner: {
+        borderRadius: '20px',
+        overflow: 'hidden',
+        height: '25px',
+        lineHeight: '25px',
+        textTransform: 'none',
+      }
+    }
 
     return (
-      <div>
-        <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
+      <div style={style}>
+        <Card style={cardStyle} expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
           <CardHeader
-            title="URL Avatar"
-            subtitle="Subtitle"
-            avatar="images/ok-128.jpg"
+            title="Sr. Front End Developer"
+            subtitle="Shopify posted this job"
+            avatar={<i className="material-icons md-12">location_city</i>}
             actAsExpander={true}
             showExpandableButton={true}
           />
-          <CardText>
-            <Toggle
-              toggled={this.state.expanded}
-              onToggle={this.handleToggle}
-              labelPosition="right"
-              label="This toggle controls the expanded state of the component."
-            />
-          </CardText>
-          <CardMedia
-            expandable={true}
-            overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
-          >
-            <img src="images/nature-600-337.jpg" alt="" />
-          </CardMedia>
-          <CardTitle title="Card title" subtitle="Card subtitle" expandable={true} />
           <CardText expandable={true}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-            Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-            Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+            Shopify is looking for an experienced front end developer to lead
+            our continued partnership with Coinbase and develop new consumer facing
+            crypto systems.
           </CardText>
-          <CardActions>
-            <FlatButton label="Expand" onClick={this.handleExpand} />
-            <FlatButton label="Reduce" onClick={this.handleReduce} />
+          <CardActions style={{textAlign: 'right'}}>
+            <RaisedButton style={buttonStyle.outer} buttonStyle={buttonStyle.inner} secondary={true} label="Refer" />
           </CardActions>
         </Card>
       </div>

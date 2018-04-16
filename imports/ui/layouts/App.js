@@ -30,6 +30,13 @@ const theme = getMuiTheme({
     textColor: "rgba(36, 59, 107, 1)",
     showMenuIconButton: true,
   },
+  button: {
+    textTransform: 'none',
+  },
+  raisedButton: {
+    secondaryColor: "rgba(73, 85, 102, 1)",
+    borderRadius: '10px',
+  }
 });
 
 class App extends React.Component {
