@@ -1,24 +1,81 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
-import { Col } from 'react-flexbox-grid';
-import Paper from 'material-ui/Paper';
-import RaisedButton from 'material-ui/RaisedButton';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
+import Toggle from 'material-ui/Toggle';
 
-const style = {
-  height: 'auto',
-  width: '400 px',
-  padding: 20,
-  textAlign: 'center',
-  display: 'inline-block',
-};
+class Index extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      expanded: false,
+    };
+  }
 
-const Index = () => (
-  <Col style={{ textAlign: 'center' }} xs={12} md={4} mdOffset={4}>
-    <Paper style={style} zDepth={1}>
-      <h2>Welcome</h2>
-      <p>A starting point for Meteor applications.</p>
-    </Paper>
-  </Col>
-);
+  handleExpandChange = (expanded) => {
+    this.setState({expanded: expanded});
+  };
+
+  handleToggle = (event, toggle) => {
+    this.setState({expanded: toggle});
+  };
+
+  handleExpand = () => {
+    this.setState({expanded: true});
+  };
+
+  handleReduce = () => {
+    this.setState({expanded: false});
+  };
+
+  render() {
+    const style = {
+      height: 'auto',
+      width: '400 px',
+      padding: 20,
+      textAlign: 'center',
+      display: 'inline-block',
+    };
+
+    return (
+      <div>
+        <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
+          <CardHeader
+            title="URL Avatar"
+            subtitle="Subtitle"
+            avatar="images/ok-128.jpg"
+            actAsExpander={true}
+            showExpandableButton={true}
+          />
+          <CardText>
+            <Toggle
+              toggled={this.state.expanded}
+              onToggle={this.handleToggle}
+              labelPosition="right"
+              label="This toggle controls the expanded state of the component."
+            />
+          </CardText>
+          <CardMedia
+            expandable={true}
+            overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
+          >
+            <img src="images/nature-600-337.jpg" alt="" />
+          </CardMedia>
+          <CardTitle title="Card title" subtitle="Card subtitle" expandable={true} />
+          <CardText expandable={true}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+            Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
+            Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+          </CardText>
+          <CardActions>
+            <FlatButton label="Expand" onClick={this.handleExpand} />
+            <FlatButton label="Reduce" onClick={this.handleReduce} />
+          </CardActions>
+        </Card>
+      </div>
+    );
+  }
+}
 
 export default Index;
