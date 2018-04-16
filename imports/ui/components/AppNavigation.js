@@ -3,18 +3,9 @@
 import React from 'react';
 import PublicNavigation from './PublicNavigation.js';
 import AuthenticatedNavigation from './AuthenticatedNavigation.js';
-import PropTypes from 'prop-types';
 
-const renderNavigation = hasUser => (hasUser ? <AuthenticatedNavigation user={hasUser} /> : <PublicNavigation />);
-
-const AppNavigation = ({ hasUser }) => (
-  <div>
-    { renderNavigation(Meteor.user()) }
-  </div>
-);
-
-AppNavigation.propTypes = {
-  hasUser: PropTypes.object,
-};
-
-export default AppNavigation;
+export default class AppNavigation extends React.Component {
+  render() {
+    return (Meteor.user() ? <AuthenticatedNavigation user={Meteor.user()} /> : <PublicNavigation />);
+  }
+}

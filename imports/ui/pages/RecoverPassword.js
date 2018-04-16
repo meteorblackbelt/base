@@ -1,6 +1,6 @@
 import React from 'react';
-import { browserHistory, Link } from 'react-router';
 import Formsy from 'formsy-react-2';
+import { browserHistory, Link } from 'react-router';
 import { Col } from 'react-flexbox-grid';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
@@ -43,7 +43,10 @@ export default class RecoverPassword extends React.Component {
     };
     return (
       <Col id="RecoverPasswordPage" className={classNames(this.props.className, "RecoverPassword")}>
-        <h3 className="page-header">Recover Password</h3>
+        <header>
+          <Link className="back" onClick={browserHistory.goBack}>Back</Link>
+          <h3 className="page-header">Recover Password</h3>
+        </header>
         <p>
           Enter your email address below to receive a link to reset your password.
         </p>

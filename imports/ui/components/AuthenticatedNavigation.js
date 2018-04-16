@@ -15,10 +15,9 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import ExitToApp from 'material-ui/svg-icons/action/exit-to-app';
 import Drawer from 'material-ui/Drawer';
 import Avatar from 'material-ui/Avatar';
-import { blueGrey800, tealA200 } from 'material-ui/styles/colors';
 import PropTypes from 'prop-types';
 
-export default class AppNavigation extends React.Component {
+export default class AuthenticatedNavigation extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -67,24 +66,27 @@ export default class AppNavigation extends React.Component {
   }
 
   render() {
+    const styles = {
+      textAlign: 'center',
+    };
     return (
       <div>
         <AppBar
           label="Toggle Drawer"
-          title="Application Name"
+          title={Meteor.settings.public.appName}
           zDepth={0}
           onTitleTouchTap={() => (browserHistory.push('/'))}
           onLeftIconButtonTouchTap={this.handleToggle}
+          titleStyle={styles}
           iconElementRight={
             <FlatButton
               onClick={this.handleTouchTap.bind(this)}
-              label={this.userName()}
               labelPosition="after"
               icon={
                 <Avatar
                   size={28}
-                  color={blueGrey800}
-                  backgroundColor={tealA200}
+                  color={"#fff"}
+                  backgroundColor={"rgba(74, 144, 226, 1)"}
                 >
                   {this.userAvatarLetters()}
                 </Avatar>
@@ -121,6 +123,6 @@ export default class AppNavigation extends React.Component {
   }
 }
 
-AppNavigation.propTypes = {
+AuthenticatedNavigation.propTypes = {
   user: PropTypes.object,
 };

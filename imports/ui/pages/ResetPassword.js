@@ -1,5 +1,6 @@
 import React from 'react';
 import Formsy from 'formsy-react-2';
+import { browserHistory, Link } from 'react-router';
 import { Col } from 'react-flexbox-grid';
 import { FormsyText } from 'formsy-mui';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -43,7 +44,10 @@ export default class ResetPassword extends React.Component {
     };
     return (
       <Col id="ResetPasswordPage" className={classNames(this.props.className, "ResetPassword")}>
-        <h3 className="page-header">Reset Password</h3>
+        <header>
+          <Link className="back" onClick={browserHistory.goBack}>Back</Link>
+          <h3 className="page-header">Reset Password</h3>
+        </header>
         <p>
           To reset your password, enter a new one below. You will be logged in
           with your new password.

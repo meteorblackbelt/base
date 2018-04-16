@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Formsy from 'formsy-react-2';
-import { Link } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 import { Col } from 'react-flexbox-grid';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
@@ -31,8 +31,8 @@ export default class Signup extends React.Component {
     });
   }
 
-  handleSubmit() {
-    handleSignup({ component: this });
+  handleSubmit(data) {
+    handleSignup(data);
   }
 
   render() {
@@ -43,7 +43,10 @@ export default class Signup extends React.Component {
     };
     return (
       <Col id={this.props.id} className={classNames(this.props.className, "Signup")}>
-        <h3 className="page-header">Sign Up</h3>
+        <header>
+					<Link className="back" onClick={browserHistory.goBack}>Back</Link>
+          <h3 className="page-header">Sign Up</h3>
+        </header>
         <Formsy.Form
           onValid={this.enableButton.bind(this)}
           onInvalid={this.disableButton.bind(this)}

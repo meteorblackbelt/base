@@ -4,19 +4,19 @@ import { browserHistory } from 'react-router';
 import { Accounts } from 'meteor/accounts-base';
 import { Bert } from 'meteor/themeteorchef:bert';
 
-const getUserData = () => ({
-  email: document.querySelector('[name="emailAddress"]').value,
-  password: document.querySelector('[name="password"]').value,
+const translateUserData = (data) => ({
+  email: data.emailAddress,
+  password: data.password,
   profile: {
     name: {
-      first: document.querySelector('[name="firstName"]').value,
-      last: document.querySelector('[name="lastName"]').value,
+      first: data.firstName,
+      last: data.lastName,
     },
   },
 });
 
-const signup = () => {
-  const user = getUserData();
+const signup = (data) => {
+  const user = translateUserData(data);
 
   Accounts.createUser(user, (error) => {
     if (error) {
@@ -40,6 +40,6 @@ const signup = () => {
   });
 };
 
-export default function handleSignup() {
-  signup();
+export default function handleSignup(data) {
+  signup(data);
 }

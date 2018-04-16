@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Formsy from 'formsy-react-2';
-import { Link } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import { FormsyText } from 'formsy-mui';
@@ -43,7 +43,10 @@ export default class Login extends React.Component {
     };
     return (
       <Col id={this.props.id} className={classNames(this.props.className, "Login")}>
-        <h3 className="page-header" style={{textAlign: "center"}}>Welcome back</h3>
+        <header>
+          <Link className="back" onClick={browserHistory.goBack}>Back</Link>
+          <h3 className="page-header">Welcome back</h3>
+        </header>
         <Formsy.Form
           onValid={this.enableButton.bind(this)}
           onInvalid={this.disableButton.bind(this)}

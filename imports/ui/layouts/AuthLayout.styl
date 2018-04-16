@@ -15,12 +15,43 @@
     display: flex
     width: 400px
 
-  .page-header
+  & > header
     display: flex
-    flex-direction: column
+    flex-direction: row
     flex: 1
-    justify-content: flex-end;
-    align-self: center;
+    justify-content: flex-end
+    align-self: stretch
+    position: relative
+    text-align: center
+
+    & > a.back
+      position: relative
+      visibility: hidden
+
+      &:before
+        content: "<"
+        transform: scaleX(0.45)
+        font-size: 1.6em
+        position: absolute
+        bottom: 0
+        left: 0
+        visibility: visible
+        top: 0
+        right: 0
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        line-height: 1.8em
+        color: #000
+
+    & > .page-header
+      display: flex
+      flex-direction: column
+      flex: 1
+      justify-content: flex-end
+      text-align: center
+      margin-right: 2em
+
 
   & > form
     flex: 4
