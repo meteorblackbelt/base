@@ -7,7 +7,7 @@ import { Meteor } from 'meteor/meteor';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import DefaultLayout from '../../ui/layouts/DefaultLayout.js';
-import BaseLayout from '../../ui/layouts/BaseLayout.js';
+import AuthLayout from '../../ui/layouts/AuthLayout.js';
 import LoginPage from '../../ui/pages/Login.js';
 import SignupPage from '../../ui/pages/Signup.js';
 import Index from '../../ui/pages/Index.js';
@@ -44,7 +44,7 @@ Meteor.startup(() => {
     <MuiThemeProvider muiTheme={theme}>
       <Router history={ browserHistory }>
         <Route path="/">
-          <Route component={ BaseLayout }>
+          <Route component={ AuthLayout }>
             <Route name="login" path="/login" component={ LoginPage } />
             <Route name="signup" path="/signup" component={ SignupPage } />
             <Route name="recover-password" path="/recover-password" component={ RecoverPassword } />

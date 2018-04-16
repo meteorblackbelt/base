@@ -69,17 +69,17 @@ export default class Login extends React.Component {
             validationError={errorMessages.passwordError}
             hintText="6 characters minimum"
             floatingLabelText="Password"
-          /><br/><br/>
-          <Row className="form-actions">
+          />
+          <div className="form-actions">
             <RaisedButton
               type="submit"
               label="Login"
               primary={true}
               disabled={!this.state.canSubmit}
             />
-          </Row>
+          </div>
           <Link className="recover-password" to="/recover-password">Forgot Password?</Link>
-        </Formsy.Form><br/>
+        </Formsy.Form>
         <footer>
 					Still without an account?
           {' '}

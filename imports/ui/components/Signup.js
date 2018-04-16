@@ -70,7 +70,7 @@ export default class Signup extends React.Component {
             validations="isWords"
             validationError={errorMessages.wordsError}
             required
-          /><br/>
+          />
           <FormsyText
             type="email"
             name="emailAddress"
@@ -91,14 +91,16 @@ export default class Signup extends React.Component {
             validationError={errorMessages.passwordError}
             hintText="6 characters minimum"
             floatingLabelText="Password"
-          /><br/><br/>
-          <RaisedButton
-            type="submit"
-            label="Sign up"
-            primary={true}
-            disabled={!this.state.canSubmit}
           />
-        </Formsy.Form><br/>
+          <div className="form-actions">
+            <RaisedButton
+              type="submit"
+              label="Sign up"
+              primary={true}
+              disabled={!this.state.canSubmit}
+            />
+          </div>
+        </Formsy.Form>
         <footer>
           Already have an account? 
           {" "}
