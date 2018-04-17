@@ -19,6 +19,10 @@ import ResetPassword from '../../ui/pages/ResetPassword.js';
 import { withTracker } from 'meteor/react-meteor-data';
 import getUserName from '../../modules/get-user-name';
 import _colors from 'material-ui/styles/colors';
+import JobPage from '../../ui/pages/Job.js';
+
+import Data from '../../ui/pages/data/Menu.js';
+import DataJobs from '../../ui/pages/data/Jobs.js';
 
 const theme = getMuiTheme({
   borderRadius: "3px",
@@ -65,6 +69,9 @@ class App extends React.Component {
             </Route>
             <Route component={ DefaultLayout } onEnter={ this.authenticate }>
               <IndexRoute name="index" component={ Index } />
+              <Route name="job" path="/jobs/:id" component={ JobPage } />
+              <Route name="data" path="/data" component={ Data } />
+              <Route name="data_jobs" path="/data/jobs" component={ DataJobs } />
               <Route path="*" component={ NotFound } />
             </Route>
           </Route>

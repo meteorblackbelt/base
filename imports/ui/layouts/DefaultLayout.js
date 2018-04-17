@@ -7,11 +7,9 @@ import PropTypes from 'prop-types';
 const DefaultLayout = ({ children }) => (
   <BaseLayout>
     <AppNavigation />
-    <Grid style={{ marginTop: '40px', marginBottom: '40px' }} fluid>
-      <Row>
-        { children }
-      </Row>
-    </Grid>
+    <div style={{ marginTop: '40px', marginBottom: '40px' }}>
+      { children }
+    </div>
   </BaseLayout>
 );
 

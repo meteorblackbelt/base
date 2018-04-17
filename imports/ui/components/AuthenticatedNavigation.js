@@ -9,11 +9,8 @@ import FlatButton from 'material-ui/FlatButton';
 import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
-import Home from 'material-ui/svg-icons/action/home';
-import InsertDriveFile from 'material-ui/svg-icons/editor/insert-drive-file';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import ExitToApp from 'material-ui/svg-icons/action/exit-to-app';
-import PersonIcon from 'material-ui/svg-icons/social/person';
 import Drawer from 'material-ui/Drawer';
 import Avatar from 'material-ui/Avatar';
 import PropTypes from 'prop-types';
@@ -115,8 +112,9 @@ export default class AuthenticatedNavigation extends React.Component {
                 <NavigationClose />
               </IconButton>}
           />
-          <MenuItem primaryText="Home" leftIcon={<Home />} containerElement={<Link to="/"/>} onClick={this.handleToggle} />
-          <MenuItem primaryText="Profile" leftIcon={<PersonIcon/>} containerElement={<Link to="/profile"/>} onClick={this.handleToggle} />
+          <MenuItem primaryText="Home" containerElement={<Link to="/"/>} onClick={this.handleToggle} />
+          <MenuItem primaryText="Profile" containerElement={<Link to="/profile"/>} onClick={this.handleToggle} />
+          <MenuItem leftIcon={<i className="fa fa-cog"></i>} containerElement={<Link to="/data"/>} onClick={this.handleToggle} />
         </Drawer>
       </div>
     );

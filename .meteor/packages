@@ -37,3 +37,4 @@ coagmano:stylus
 react-meteor-data
 aldeed:collection2-core
 ostrio:files
+insecure
