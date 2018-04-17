@@ -80,7 +80,7 @@ class Index extends React.Component {
     };
 
     return (
-      <div style={style}>
+      <div id="IndexPage" className="job-list" style={style}>
         {this.renderJobs()}
       </div>
     );

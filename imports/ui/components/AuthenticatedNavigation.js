@@ -113,7 +113,8 @@ export default class AuthenticatedNavigation extends React.Component {
               </IconButton>}
           />
           <MenuItem primaryText="Home" containerElement={<Link to="/"/>} onClick={this.handleToggle} />
-          <MenuItem primaryText="Profile" containerElement={<Link to="/profile"/>} onClick={this.handleToggle} />
+          <MenuItem primaryText="Profile" containerElement={<Link to="/profile" />} onClick={this.handleToggle} />
+          <MenuItem primaryText="Wallet" containerElement={<Link to="/wallet" />} onClick={this.handleToggle} />
           <MenuItem leftIcon={<i className="fa fa-cog"></i>} containerElement={<Link to="/data"/>} onClick={this.handleToggle} />
         </Drawer>
       </div>

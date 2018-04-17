@@ -70,14 +70,14 @@ class Job extends React.Component {
 
     return (
       <Grid style={style}>
-          <header>
-            <Link className="back" onClick={browserHistory.goBack}>Back</Link>
-            <h3 className="page-header">
-              {this.props.job.company}
-            </h3>
-          </header>
+        <header>
+          <Link className="back" onClick={browserHistory.goBack}>Back</Link>
+          <h3 className="page-header">
+            {this.props.job.company}
+          </h3>
+        </header>
 
-          {this.renderJob()}
+        {this.renderJob()}
       </Grid>
     );
   }

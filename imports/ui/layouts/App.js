@@ -20,6 +20,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import getUserName from '../../modules/get-user-name';
 import _colors from 'material-ui/styles/colors';
 import JobPage from '../../ui/pages/Job.js';
+import WalletPage from '../../ui/pages/Wallet.js';
 
 import Data from '../../ui/pages/data/Menu.js';
 import DataJobs from '../../ui/pages/data/Jobs.js';
@@ -70,6 +71,8 @@ class App extends React.Component {
             <Route component={ DefaultLayout } onEnter={ this.authenticate }>
               <IndexRoute name="index" component={ Index } />
               <Route name="job" path="/jobs/:id" component={ JobPage } />
+              <Route name="wallet" path="/wallet" component={ WalletPage } />
+
               <Route name="data" path="/data" component={ Data } />
               <Route name="data_jobs" path="/data/jobs" component={ DataJobs } />
               <Route path="*" component={ NotFound } />
