@@ -8,10 +8,7 @@ const translateUserData = (data) => ({
   email: data.emailAddress,
   password: data.password,
   profile: {
-    name: {
-      first: data.firstName,
-      last: data.lastName,
-    },
+    name: data.name
   },
 });
 

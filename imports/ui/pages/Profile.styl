@@ -1,0 +1,64 @@
+#ProfilePage
+  display: flex
+  flex-direction: column
+  width: 100%
+  text-align: center
+  height: 100%
+
+  .profile-main
+    background-color: rgba(73, 85, 102, 1)
+    padding: 20px
+    color: #fff
+
+    & > a.back
+      float: left
+
+    .profile-pic
+      position: relative
+      left: -15px
+      display: inline-block
+      margin: 0 auto
+      object-fit: contain
+      width: 100px
+      height: 100px
+
+      a[action="edit"]
+        position: absolute
+        top: 0
+        right: 0
+        visibility: hidden
+
+        &:before
+          font-size: 0.75em
+          visibility: visible
+          background: rgba(255, 112, 82, 1)
+          border: 3px solid rgba(73, 85, 102, 1)
+          border-radius: 50%
+          width: 2.5em
+          height: 2.5em
+          padding: 0.5em
+          color: #fff
+          position: absolute
+          top: 0
+          right: 0
+
+      & > img, & > svg
+        background: #fff
+        border-radius: 50%
+        width: 100px
+
+    .name
+      font-weight: bold
+
+    .position
+      font-size: 1.2em
+      font-weight: bold
+      color: rgba(74, 144, 226, 1)
+
+  .profile-details
+    padding: 20px
+    flex-grow: 20
+
+  .page-actions
+    justify-self: flex-start
+    display: flex

@@ -57,7 +57,7 @@ class Index extends React.Component {
           <CardHeader
             title="Sr. Front End Developer"
             subtitle="Shopify posted this job"
-            avatar={<i className="material-icons md-12">location_city</i>}
+            avatar={<i className="fa fa-building"></i>}
             actAsExpander={true}
             showExpandableButton={true}
           />

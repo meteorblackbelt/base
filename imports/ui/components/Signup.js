@@ -5,7 +5,6 @@ import Formsy from 'formsy-react-2';
 import { browserHistory, Link } from 'react-router';
 import { Col } from 'react-flexbox-grid';
 import RaisedButton from 'material-ui/RaisedButton';
-import FlatButton from 'material-ui/FlatButton';
 import { FormsyText } from 'formsy-mui';
 import handleSignup from '../../modules/signup';
 import PropTypes from 'prop-types';
@@ -54,22 +53,11 @@ export default class Signup extends React.Component {
         >
           <FormsyText
             type="text"
-            ref="firstName"
-            name="firstName"
+            ref="name"
+            name="name"
             fullWidth={true}
-            floatingLabelText="First Name"
-            hintText="Enter your first name"
-            validations="isWords"
-            validationError={errorMessages.wordsError}
-            required
-          /><br/>
-          <FormsyText
-            type="text"
-            ref="lastName"
-            name="lastName"
-            fullWidth={true}
-            floatingLabelText="Last Name"
-            hintText="Enter your last name"
+            floatingLabelText="Name"
+            hintText="Enter your full name"
             validations="isWords"
             validationError={errorMessages.wordsError}
             required
@@ -84,7 +72,7 @@ export default class Signup extends React.Component {
             required
             hintText="Enter a valid email address"
             floatingLabelText="Email Address"
-          /><br/>
+          />
           <FormsyText
             type="password"
             name="password"

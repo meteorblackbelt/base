@@ -13,6 +13,7 @@ import Home from 'material-ui/svg-icons/action/home';
 import InsertDriveFile from 'material-ui/svg-icons/editor/insert-drive-file';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import ExitToApp from 'material-ui/svg-icons/action/exit-to-app';
+import PersonIcon from 'material-ui/svg-icons/social/person';
 import Drawer from 'material-ui/Drawer';
 import Avatar from 'material-ui/Avatar';
 import PropTypes from 'prop-types';
@@ -54,15 +55,14 @@ export default class AuthenticatedNavigation extends React.Component {
   userName() {
     const user = this.props.user;
     const name = user && user.profile ? user.profile.name : '';
-    return user ? `${name.first} ${name.last}` : '';
+    return user ? `${name}` : '';
   }
 
-  userAvatarLetters() {
+  userAvatarLetter() {
     const user = this.props.user;
     const name = user && user.profile ? user.profile.name : '';
-    const first = name.first.charAt(0);
-    const last = name.last.charAt(0);
-    return `${first}${last}`;
+    const letter = name.charAt(0);
+    return `${letter}`;
   }
 
   render() {
@@ -88,7 +88,7 @@ export default class AuthenticatedNavigation extends React.Component {
                   color={"#fff"}
                   backgroundColor={"rgba(74, 144, 226, 1)"}
                 >
-                  {this.userAvatarLetters()}
+                  {this.userAvatarLetter()}
                 </Avatar>
               }
             >
@@ -108,7 +108,6 @@ export default class AuthenticatedNavigation extends React.Component {
         />
         <Drawer open={this.state.open}>
           <AppBar
-            title="Menu"
             zDepth={0}
             showMenuIconButton={false}
             iconElementRight={
@@ -116,7 +115,8 @@ export default class AuthenticatedNavigation extends React.Component {
                 <NavigationClose />
               </IconButton>}
           />
-          <MenuItem primaryText="Home" leftIcon={<Home />} containerElement={<Link to="/"/>} />
+          <MenuItem primaryText="Home" leftIcon={<Home />} containerElement={<Link to="/"/>} onClick={this.handleToggle} />
+          <MenuItem primaryText="Profile" leftIcon={<PersonIcon/>} containerElement={<Link to="/profile"/>} onClick={this.handleToggle} />
         </Drawer>
       </div>
     );

@@ -2,10 +2,10 @@
 
 import React from 'react';
 import Formsy from 'formsy-react-2';
+import { FormsyText } from 'formsy-mui';
 import { browserHistory, Link } from 'react-router';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-import { FormsyText } from 'formsy-mui';
 import { Row, Col } from 'react-flexbox-grid';
 import handleLogin from '../../modules/login';
 import PropTypes from 'prop-types';

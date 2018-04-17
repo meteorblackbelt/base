@@ -11,6 +11,7 @@ import DefaultLayout from '../../ui/layouts/DefaultLayout.js';
 import AuthLayout from '../../ui/layouts/AuthLayout.js';
 import LoginPage from '../../ui/pages/Login.js';
 import SignupPage from '../../ui/pages/Signup.js';
+import Profile from '../../ui/pages/Profile.js';
 import Index from '../../ui/pages/Index.js';
 import NotFound from '../../ui/pages/NotFound.js';
 import RecoverPassword from '../../ui/pages/RecoverPassword.js';
@@ -60,9 +61,10 @@ class App extends React.Component {
               <Route name="signup" path="/signup" component={ SignupPage } />
               <Route name="recover-password" path="/recover-password" component={ RecoverPassword } />
               <Route name="reset-password" path="/reset-password/:token" component={ ResetPassword } />
+              <Route name="profile" path="/profile" component={ Profile } />
             </Route>
-            <Route component={ DefaultLayout }>
-              <IndexRoute name="index" component={ Index } onEnter={ this.authenticate } />
+            <Route component={ DefaultLayout } onEnter={ this.authenticate }>
+              <IndexRoute name="index" component={ Index } />
               <Route path="*" component={ NotFound } />
             </Route>
           </Route>

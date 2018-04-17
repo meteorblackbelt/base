@@ -6,4 +6,7 @@ import App from '../../ui/layouts/App.js';
 
 Bert.defaults.style = 'growl-top-right';
 
-Meteor.startup(() => render(<App />, document.getElementById('react-root')));
+Meteor.startup(() => {
+  document.title = Meteor.settings.public.appName;
+  render(<App />, document.getElementById('react-root'));
+});
