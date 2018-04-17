@@ -13,6 +13,7 @@ import LoginPage from '../../ui/pages/Login.js';
 import SignupPage from '../../ui/pages/Signup.js';
 import Profile from '../../ui/pages/Profile.js';
 import Index from '../../ui/pages/Index.js';
+import JobsPage from '../../ui/pages/Jobs.js';
 import NotFound from '../../ui/pages/NotFound.js';
 import RecoverPassword from '../../ui/pages/RecoverPassword.js';
 import ResetPassword from '../../ui/pages/ResetPassword.js';
@@ -71,6 +72,7 @@ class App extends React.Component {
             <Route component={ DefaultLayout } onEnter={ this.authenticate }>
               <IndexRoute name="index" component={ Index } />
               <Route name="job" path="/jobs/:id" component={ JobPage } />
+              <Route name="jobs" path="/jobs" component={ JobsPage } />
               <Route name="wallet" path="/wallet" component={ WalletPage } />
 
               <Route name="data" path="/data" component={ Data } />

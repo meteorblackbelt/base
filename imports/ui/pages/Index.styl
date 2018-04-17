@@ -1,3 +1,47 @@
 #IndexPage
-  .job-list
+  &.list
     padding: 0 1em
+
+    .card
+      section
+        padding: 0.5em 1em
+        margin: 0 -16px
+
+        &:not(:last-child)
+          border-bottom: 1px solid #ccc
+
+        .reputation
+          &:before
+            content: "↗"
+            color: purple
+            display: inline-block
+            width: 1em
+            height: 1em
+            font-size: 0.8em
+
+        .turnover
+          &:before
+            content: "↗"
+            color: blue
+            display: inline-block
+            width: 1em
+            height: 1em
+            font-size: 0.8em
+
+        .salary
+          &:before
+            content: "$"
+            color: green
+            display: inline-block
+            width: 1em
+            height: 1em
+            font-size: 0.8em
+
+        p
+          color: #666
+          line-height: 1em
+          margin: 0.25em 0
+
+      .card-header
+        img
+          width: 16px

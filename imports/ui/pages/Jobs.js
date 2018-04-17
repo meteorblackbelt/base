@@ -7,9 +7,9 @@ import Toggle from 'material-ui/Toggle';
 import Jobs from '../../api/jobs/jobs.js';
 import { withTracker } from 'meteor/react-meteor-data';
 import autoBind from 'auto-bind';
-import './Index.styl'
+import './Jobs.styl'
 
-class Index extends React.Component {
+class JobsPage extends React.Component {
   constructor(props) {
     super(props);
 		autoBind(this);
@@ -79,73 +79,10 @@ class Index extends React.Component {
       flexDirection: 'column',
       flex: 1,
     };
-    const cardStyle = {
-      marginBottom: '1em',
-    }
 
     return (
-      <div id="IndexPage" className="list" style={style}>
-        <Card style={cardStyle} >
-          <CardHeader
-            title="Shopify"
-            subtitle="New company profile"
-            avatar={<i className="fa fa-building"></i>}
-          />
-        </Card>
-
-        <Card className="card" style={cardStyle} >
-          <CardHeader
-            title="HireLogix Highlight"
-            avatar={<i className="fa fa-gift"></i>}
-          />
-          <CardText>
-            <section>
-              <h3>Bug Bounty</h3>
-              <p>154 people are participating</p>
-              <p>Large payout</p>
-            </section>
-
-            <section>
-              <h3>Scrollspy Bug (Personal Project)</h3>
-              <p>140 people are participating</p>
-            </section>
-
-            <section>
-              <h3>PEN Test</h3>
-              <p>90 people are participating</p>
-              <p>Hirelogix Top Profile</p>
-              <p>AAA Grade Reputation</p>
-            </section>
-          </CardText>
-        </Card>
-
-        <Card className="card" style={cardStyle} >
-          <CardHeader className="card-header"
-            title="Top Active Bounty"
-            avatar={<img src="/logo.png" />}
-          />
-          <CardText>
-            <section>
-              <h3>StackAdapt</h3>
-              <p>More than an advertising platform, it's a hub of innovation, imagination and creativity.</p>
-              <p className="reputation">Rising Reputation Score</p>
-              <p className="turnover">Rapidly hiring, low turnover</p>
-              <p className="salary">Competitive Salaries</p>
-            </section>
-
-            <section>
-              <h3>Scrollspy Bug (Personal Project)</h3>
-              <p>140 people are participating</p>
-            </section>
-
-            <section>
-              <h3>PEN Test</h3>
-              <p>90 people are participating</p>
-              <p>Hirelogix Top Profile</p>
-              <p>AAA Grade Reputation</p>
-            </section>
-          </CardText>
-        </Card>
+      <div id="IndexPage" className="job-list" style={style}>
+        {this.renderJobs()}
       </div>
     );
   }
@@ -157,4 +94,4 @@ export default withTracker(() => {
   return {
     jobs: Jobs.find({}, { sort: { createdAt: -1 } }).fetch(),
   };
-})(Index);
+})(JobsPage);
